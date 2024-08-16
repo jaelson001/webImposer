@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="./pdf-lib.min.js"></script>
+  <script type="module" src="./pdf.worker.mjs"></script>
+    <script type="module" src="./pdf.mjs"></script>
+    <!-- <script type="module"> import pdfjsDist from "./+esm.js" </script> -->
+	<title>Imposer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="navbar">
+      <a class="navbar-brand" href="#">
+        <img src="./jira.png" style="height:38px;">Imposer
+      </a>
+      <div class="navbar-nav" style="width: 90%;display: flex;flex-flow: row nowrap;align-items: center;justify-content: space-evenly;">
+            <div class="nav-item d-flex">
+              <div class="btn-group">
+            <label for="entrada" class="btn btn-outline-secondary" id="abrir" >Abrir Arquivo</label>
+            <a class="btn btn-outline-primary disabled" disabled id="baixar" href="#" download="imposed.pdf">Baixar</a>
+              </div>
+            </div>
+            <div class="nav-item d-flex">
+          <div class="input-group">
+                <span class="input-group-text" id="label-sangria">Sangria (mm)</span>
+            <input class="form-control" style="width:100px;" type="number" id="sangria" value="2">
+              </div>
+            </div>
+            <div class="nav-item d-flex">
+          <div class="input-group">
+                <span class="input-group-text" id="label-largura">Largura (mm)</span>
+            <input class="form-control" style="width:100px;" type="number" id="largura" value="88">
+              </div>
+            </div>
+            <div class="nav-item d-flex">
+              <div class="input-group">
+                <span class="input-group-text" id="label-altura">Altura (mm)</span>
+            <input class="form-control" style="width:100px;" type="number" id="altura" value="48">
+              </div>
+            </div>
+            <div class="nav-item d-flex">
+          <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Papel</span>
+                  <select id="papel" class="form-control">
+                    <option altura="594" largura="841" value="A1">A1 (594 x 841)</option>
+                    <option altura="420" largura="594" value="A2">A2 (420 x 594)</option>
+                    <option altura="297" largura="420" value="A3" selected>A3 (297 x 420)</option>
+                    <option altura="210" largura="297" value="A4">A4 (210 x 297)</option>
+                  </select>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="content empty" id="wrapper">
+      
+    </div>
+    <input type="file" id="entrada" style="display:none;">
+  </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
