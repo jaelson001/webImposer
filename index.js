@@ -16,7 +16,7 @@ document.getElementById("entrada").addEventListener("change", function(e){
                 document.querySelector(".content").classList.remove("empty");
                 impose(buffer);
             }else{
-                alert("tipo de arquivo ainda é invalido")
+                alert("tipo de arquivo não é suportado nessa versão")
             }
             
         };
